@@ -1,0 +1,50 @@
+body {
+    background: white;
+    font-family: georgia;
+    background-image: url(background.png);
+    background-repeat: repeat;
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 60px;
+    color: darkblue;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+h3 a{
+    color: red;
+}
+
+h3 a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+h4 {
+    text-align: center;
+    font-style: italic;
+}
+
+.tets1 {
+    text-align: center;
+    color: orange
+}
+
+.texs2 {
+    text-align: right;
+}
+
+.texs2 a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.teks2 a:hover {
+    background: blue;
+    color:white;
+}
