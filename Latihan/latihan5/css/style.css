@@ -1,0 +1,183 @@
+/* Font */
+@font-face {
+    font-family: 'kaushanScript';
+    src: url(../fonts/KaushanScript-Regular.otf) format('woff');
+}
+
+/* Style Utama */
+body {
+    Font: 100px/80px 'kaushanScript', 'Arial Narrow', arial, sans-serif;
+    background-color: antiquewhite;
+}
+
+
+h1 {
+    font-size: 200px;
+    color: palevioletred;
+    margin: 100px 0;
+    text-align: center;
+    text-shadow: 1px 1px 3px black;
+}
+
+.container {
+    width: 3185px;
+    background-color: lightpink;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,.3);
+    border-radius: 10px;
+}
+
+.gallery li {
+    width: 700px;
+    height: 700px;
+    overflow: hidden;
+    border: 10px solid white;
+    float: left;
+    margin-right: 80px;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.gallery li {
+    border-radius: 50%;
+}
+
+.gallery li span {
+    display: block;
+    width: 700px;
+    height: 700px;
+    background-color: rgba(200,200,200,.5);
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    line-height: 700px;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px gainsboro;
+    opacity: 0;
+    transform: scale(0) rotate(0);
+    transition: .5s;
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+.clear {
+    clear: both;
+}
+
+/* overlay */
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 9999;
+    transition: 1s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.7);
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2 px 2px 7px rgba(0,0,0,.5);
+    margin-top: 70px;
+}
+
+.overlay:target img {
+    animation:  FadeAjah 1s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -140px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: black;
+    line-height: 14px;
+    padding: 40px;
+    opacity: 0;
+}
+
+.overlay:target .close {
+    animation: slideDownFade .5s .5s forwards;
+}
+
+.overlay:target .next,
+.overlay:target .previous {
+    animation: FadeAjah .5s .5s forwards;
+}
+
+/* navigasi */
+.next{
+    position: absolute;
+    top: 20%;
+    color: white;
+    size: 40px;
+    margin-left: 50px;
+    font-size: 100px;
+    opacity: 0;
+}
+
+.previous{
+    position: absolute;
+    top: 20%;
+    color: white;
+    size: 40px;
+    margin-left: -120px;
+    font-size: 100px;
+    opacity: 0;
+}
+
+
+/* animasi */
+@keyframes FadeAjah {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomDanFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transition: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
